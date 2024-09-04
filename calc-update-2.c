@@ -12,7 +12,7 @@ int main()
         printf("3 - Carpma\n");
         printf("4 - Bolme\n");
         printf("5 - Faktoriyal\n");
-        printf("6 - Pozitif sayilarin Aritmatik Ort.\n");
+        printf("6 - Pozitif sayilarin Aritmetik Ort.\n");
         printf("0 - Cikis\n\n");
 
         printf("Yapmak istediginiz islemi secin:");
@@ -85,7 +85,7 @@ int main()
                 for(i = 1; i <= numberOne; i++) {
                     factorial *= i;
                 }
-                printf("%d! = %d\n\n", numberOne, factorial);
+                printf("%d! = %d\n", numberOne, factorial);
 
                 break;
             case 6:
@@ -111,10 +111,11 @@ int main()
                     } else {
                         sum += numberTwo;
                     }
-
-                    average = sum / numberOne;
-                    printf("aritmatik ortalama:%d\n\n", average);
                 }
+
+                average = sum / numberOne;
+                printf("aritmetik ortalama:%d\n\n", average);
+
                 break;
             case 0:
                 break;
