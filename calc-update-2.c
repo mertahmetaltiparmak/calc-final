@@ -107,7 +107,7 @@ int main()
 
     case 6:
 
-    //hatali calismiyor.
+    // hatali calismiyor.
 
     printf("Kac sayi gireceksiniz:");
     scanf("%d", &numberOne);
