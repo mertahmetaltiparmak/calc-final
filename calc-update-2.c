@@ -89,7 +89,6 @@ int main()
 
                 break;
             case 6:
-                // hatali calismiyor.
 
                 printf("Kac sayi gireceksiniz:");
                 scanf("%d", &numberOne);
