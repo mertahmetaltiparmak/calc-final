@@ -1,125 +1,165 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-    int i, factorial, option, result, numberOne, numberTwo, average, sum;
-    factorial = 1;
+int menu();
 
-    while(option != 0) {
-        printf("1 - Toplama\n");
-        printf("2 - Cikarma\n");
-        printf("3 - Carpma\n");
-        printf("4 - Bolme\n");
-        printf("5 - Faktoriyal\n");
-        printf("6 - Pozitif sayilarin Aritmetik Ort.\n");
-        printf("0 - Cikis\n\n");
+void toplam();
+void cikarma(); 
+void carpma();
+void bolme();
+void faktoriyel();
+void aritmetik();
 
-        printf("Yapmak istediginiz islemi secin:");
-        scanf("%d", &option);
-        printf("\n");
+int main() {
+    int option = 1;
+   
+    while (option != 0) {
 
-        switch(option){
+       option = menu();
+        
+        switch (option) {
             case 1:
-                printf("birinci sayiyi girin:");
-                scanf("%d", &numberOne);
-                printf("\n");
-
-                printf("ikinci sayiyi girin:");
-                scanf("%d", &numberTwo);
-                printf("\n");
-
-                result = numberOne + numberTwo;
-                printf("Sonuc:%d\n\n", result);
-
+                toplam();
                 break;
             case 2:
-                printf("birinci sayiyi girin:");
-                scanf("%d", &numberOne);
-                printf("\n");
-
-                printf("ikinci sayiyi girin:");
-                scanf("%d", &numberTwo);
-                printf("\n");
-
-                result = numberOne - numberTwo;
-                printf("Sonuc:%d\n\n", result);
-
+                cikarma();
                 break;
             case 3:
-                printf("birinci sayiyi girin:");
-                scanf("%d", &numberOne);
-                printf("\n");
-
-                printf("ikinci sayiyi girin:");
-                scanf("%d", &numberTwo);
-                printf("\n");
-
-                result = numberOne * numberTwo;
-                printf("Sonuc:%d\n\n", result);
-
+                carpma();
                 break;
             case 4:
-                printf("birinci sayiyi girin:");
-                scanf("%d", &numberOne);
-                printf("\n");
-
-                printf("ikinci sayiyi girin:");
-                scanf("%d", &numberTwo);
-                printf("\n");
-
-                result = numberOne / numberTwo;
-                printf("Sonuc:%d\n\n", result);
-
+                bolme();
                 break;
             case 5:
-                printf("sayi girin:");
-                scanf("%d", &numberOne);
-                printf("\n");
-
-                if(numberOne < 0) {
-                    printf("Gecersiz deger\n\n");
-                    return 0;
-                }
-
-                for(i = 1; i <= numberOne; i++) {
-                    factorial *= i;
-                }
-                printf("%d! = %d\n", numberOne, factorial);
-
+                faktoriyel();
                 break;
             case 6:
-
-                printf("Kac sayi gireceksiniz:");
-                scanf("%d", &numberOne);
-                printf("\n");
-
-                if(numberOne <= 0) {
-                    printf("Gecersiz deger\n");
-                    return 0;
-                }
-
-                for(i = 1; i <= numberOne; i++) {
-                    printf("Sayi girin:");
-                    scanf("%d", &numberTwo);
-                    printf("\n");
-
-                    if(numberTwo == 0 || numberTwo < 0) {
-                        printf("Lutfen pozitif bir sayi girin.\n");
-                        return 0;
-                    } else {
-                        sum += numberTwo;
-                    }
-                }
-
-                average = sum / numberOne;
-                printf("aritmetik ortalama:%d\n\n", average);
-
+                aritmetik();
                 break;
             case 0:
                 break;
-
-            return 0;
         }
     }
+    system("pause");
+    return 0;
+}
+
+int menu() {
+    int opt;
+    printf("1 - Toplama\n");
+    printf("2 - Cikarma\n");
+    printf("3 - Carpma\n");
+    printf("4 - Bolme\n");
+    printf("5 - Faktoriyal\n");
+    printf("6 - Pozitif sayilarin Aritmetik Ort.\n");
+    printf("0 - Cikis\n\n");
+
+    printf("Yapmak istediginiz islemi secin:");
+    scanf("%d", &opt);
+    printf("\n"); 
+
+    return opt;
+}
+void toplam() {
+    int numberOne, numberTwo, result;
+
+     printf("birinci sayiyi girin:");
+     scanf("%d", &numberOne);
+     printf("\n");
+
+    printf("ikinci sayiyi girin:");
+    scanf("%d", &numberTwo);
+    printf("\n");
+
+    result = numberOne + numberTwo;
+    printf("Sonuc:%d\n\n", result);
+}
+void cikarma() {
+    int numberOne, numberTwo, result;
+
+    printf("birinci sayiyi girin:");
+    scanf("%d", &numberOne);
+    printf("\n");
+
+    printf("ikinci sayiyi girin:");
+    scanf("%d", &numberTwo);
+    printf("\n");
+
+    result = numberOne - numberTwo;
+    printf("Sonuc:%d\n\n", result);
+
+}
+void carpma() {
+    int numberOne, numberTwo, result;
+
+    printf("birinci sayiyi girin:");
+    scanf("%d", &numberOne);
+    printf("\n");
+
+    printf("ikinci sayiyi girin:");
+    scanf("%d", &numberTwo);
+    printf("\n");
+
+    result = numberOne * numberTwo;
+    printf("Sonuc:%d\n\n", result);
+
+}
+void bolme() {
+    int numberOne, numberTwo, result;
+
+    printf("birinci sayiyi girin:");
+    scanf("%d", &numberOne);
+    printf("\n");
+
+    printf("ikinci sayiyi girin:");
+    scanf("%d", &numberTwo);
+    printf("\n");
+
+    result = numberOne / numberTwo;
+    printf("Sonuc:%d\n\n", result);
+
+}
+void faktoriyel() {
+    int numberOne, factorial = 1;
+
+    printf("sayi girin:");
+    scanf("%d", &numberOne);
+    printf("\n");
+
+    if (numberOne < 0) {
+        printf("Gecersiz deger\n\n");
+        exit(EXIT_FAILURE);
+    }
+    for (int i = 1; i <= numberOne; i++) {
+        factorial *= i;
+    }
+    printf("%d! = %d\n\n", numberOne, factorial);
+
+}
+void aritmetik() {
+    int numberOne, numberTwo, average, sum = 0;
+
+    printf("Kac sayi gireceksiniz:");
+    scanf("%d", &numberOne);
+    printf("\n");
+
+    if (numberOne <= 0) {
+        printf("Gecersiz deger\n\n");
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 1; i <= numberOne; i++) {
+        printf("Sayi girin:");
+        scanf("%d", &numberTwo);
+        printf("\n");
+
+        if (numberTwo == 0 || numberTwo < 0) {
+            printf("Lutfen pozitif bir sayi girin.\n\n");
+            exit(EXIT_FAILURE);
+        } else {
+            sum += numberTwo;
+        }
+    }
+    average = sum / numberOne;
+    printf("aritmetik ortalama:%d\n\n", average);
 }
