@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 int menu();
-
 void toplam();
 void cikarma(); 
 void carpma();
